@@ -21,7 +21,6 @@ impl Ticket {
 
 Those methods compile and are enough to get tests to pass, but in a real-world scenario they won't get you very far.
 Consider this snippet:
-
 ```rust
 if ticket.status() == "To-Do" {
     // We haven't covered the `println!` macro yet,
@@ -237,3 +236,5 @@ For the time being, focus on understanding the _how_. Take each compiler error a
 
 [^refine]: This is a great mental model to start out, but it doesn't capture the _full_ picture.
 We'll refine our understanding of references [later in the course](../07_threads/06_interior_mutability.md).
+
+![alt text](image.png)

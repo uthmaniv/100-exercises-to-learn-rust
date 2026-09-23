@@ -146,3 +146,10 @@ In most cases, the target type is either:
 - Specified in the variable declaration with a type annotation (e.g. `let title: String = "A title".into();`)
 
 `.into()` will work out of the box as long as the compiler can infer the target type from the context without ambiguity.
+
+While Vec isn't an iterator, it does implement the IntoIterator trait. This allows you to generate three distinct types of iterators depending on your ownership needs:
+Method              |Returns             |Yields                          |What happens to the Vec?
+---------------------------------------------------------------------------------------------------------------------------------
+vec.iter()          |std::slice::Iter    |Immutable references (&T)       |Borrows the vector; it remains usable later.
+vec.iter_mut()      |std::slice::Iter    |MutMutable references (&mut T)  |Borrows the vector; allows changing elements in place.
+vec.into_iter()     |std::vec::IntoIter  |Owned values (T)                |Consumes the vector; moves ownership out of it.
