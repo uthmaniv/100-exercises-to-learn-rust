@@ -1,3 +1,7 @@
+use std::sync::mpsc::Receiver;
+
+use crate::Shape::{Circle, Pentagon, Rectangle, Square, Triangle};
+
 enum Shape {
     Circle,
     Square,
@@ -9,7 +13,14 @@ enum Shape {
 impl Shape {
     // TODO: Implement the `n_sides` method using a `match`.
     pub fn n_sides(&self) -> u8 {
-        todo!()
+        match self{
+            Circle => 0,
+            Square => 4,
+            Rectangle => 4,
+            Triangle => 3,
+            Pentagon => 5
+        }
+        
     }
 }
 
