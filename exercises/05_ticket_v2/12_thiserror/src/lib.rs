@@ -1,4 +1,3 @@
-use std::fmt::{Display,Formatter,Result as FmtResult};
 use thiserror::Error;
 use TicketNewError::*;
 // TODO: Implement the `Error` trait for `TicketNewError` using `thiserror`.
